@@ -20,7 +20,7 @@ export default function ServicesSection() {
           {/* Left Column: Image */}
           <div className="relative h-full min-h-[500px] w-full rounded-2xl overflow-hidden bg-gray-100 dark:bg-slate-800 order-2 lg:order-1 shadow-2xl">
             <img
-              src="./what-jadoon-technologies-do.jpg"
+              src="/what-jadoon-technologies-do.jpg"
               alt="What we build"
               className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
             />

@@ -44,7 +44,7 @@ export default function ValuePropsSection() {
           {/* Right Column: Image */}
           <div className="relative h-full min-h-[400px] w-full rounded-2xl overflow-hidden bg-gray-100 dark:bg-slate-800">
             <img
-              src="./why-companies-choose-jadoon technologies.jpg"
+              src="/why-companies-choose-jadoon technologies.jpg"
               alt="Team collaboration"
               className="absolute inset-0 h-full w-full object-cover"
             />
