@@ -18,7 +18,7 @@ export default function CaseStudiesPage() {
                     Case Studies
                 </h1>
                 <p className="text-xl text-neutral-600 dark:text-slate-300 mb-12 leading-relaxed max-w-3xl">
-                    Explore how we've helped our clients overcome challenges and achieve their business goals through technology.
+                    Explore how we&apos;ve helped our clients overcome challenges and achieve their business goals through technology.
                 </p>
 
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
