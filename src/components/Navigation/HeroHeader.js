@@ -43,40 +43,36 @@ export default function HeroHeader({
         />
 
         {/* Hero content */}
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-10 sm:pt-16 md:pt-24">
-          <div className="max-w">
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
-              <span className="inline-block h-2 w-2 rounded-full bg-[#2563eb]" />
-              Web • Mobile • AI Solutions
-            </p>
-            <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-16 sm:pt-20 md:pt-24 pb-16">
+          <div className="max-w-4xl">
+
+
+            <h1 className="text-4xl font-bold leading-[1.2] text-white sm:text-4xl md:text-5xl lg:text-6xl mb-6">
               {headline}
             </h1>
-            <p className="mt-4 max-w-xl text-base text-white/80 sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
               {subhead}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href="#contact"
-                className="rounded-2xl bg-white/95 px-5 py-3 text-sm font-semibold text-gray-900 shadow hover:bg-white"
+                className="group inline-flex items-center gap-2 rounded-2xl bg-white px-8 py-4 text-base font-semibold text-gray-900 shadow-xl hover:bg-blue-50 transition-all hover:scale-105"
               >
                 Start a project
+                <svg className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
               <Link
                 href="#work"
-                className="rounded-2xl border border-white/30 px-5 py-3 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-2xl border-2 border-white/30 px-8 py-4 text-base font-semibold text-white backdrop-blur-lg transition hover:bg-white/10 hover:border-white/50"
               >
                 See our work
               </Link>
             </div>
 
-            {/* Creds / stats */}
-            <dl className="mt-10 grid max-w-xl grid-cols-2 gap-6 text-white/80 sm:grid-cols-3">
-              <Stat label="Lightning-fast delivery" value="Agile" />
-              <Stat label="AI-first engineering" value="Flexible" />
-              <Stat label="Enterprise-grade quality" value="Secure" />
-            </dl>
+
 
             {/* Brand trust slider */}
             <section className="mt-10 max-w-3xl">

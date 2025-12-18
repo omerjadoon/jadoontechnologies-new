@@ -55,11 +55,11 @@ export default function ParticlesWave() {
     const opacities = new Float32Array(numParticles); // per-particle opacity
 
     const colorPalette = [
-      new THREE.Color(0xEFF6FF), // Blue 50 (Almost white, cool tone)
-      new THREE.Color(0xDBEAFE), // Blue 100 (Very Light Blue)
-      new THREE.Color(0xBFDBFE), // Blue 200 (Light Blue)
-      new THREE.Color(0x60A5FA), // Blue 400 (Soft Blue Accent)
-      new THREE.Color(0x3B82F6), // Blue 500 (Brand Blue Accent)
+      new THREE.Color(0xFFFFFF), // Pure White
+      new THREE.Color(0xF8FAFC), // Slate 50 (Almost White)
+      new THREE.Color(0xF1F5F9), // Slate 100 (Very Light)
+      new THREE.Color(0xE0E7FF), // Indigo 100 (Light with hint of blue)
+      new THREE.Color(0xDEEAFE), // Blue 100 (Light Blue)
     ];
 
     let i = 0;
@@ -82,8 +82,8 @@ export default function ParticlesWave() {
         colors[index + 1] = color.g;
         colors[index + 2] = color.b;
 
-        // Assign random opacity between 0.15 and 0.35
-        opacities[i] = Math.random() * (0.35 - 0.15) + 0.15;
+        // Assign random opacity between 0.3 and 0.6 for more visibility
+        opacities[i] = Math.random() * (0.6 - 0.3) + 0.3;
 
         i++;
       }

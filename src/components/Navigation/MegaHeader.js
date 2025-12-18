@@ -8,7 +8,7 @@ import {
   ShoppingBag, Plane, Radio, Landmark, Heart,
   FileText, BookOpen, Video, Users,
   Info, Star, UserCheck, Leaf, HeartHandshake, Briefcase, Mail, Phone, MapPin,
-  ChevronRight
+  ChevronRight, X
 } from "lucide-react";
 
 /**
@@ -161,6 +161,7 @@ export default function MegaHeader() {
   const { open, openMenu, scheduleClose, cancelClose } = useStableHover();
   const keys = Object.keys(NAV);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpenGroup, setMobileOpenGroup] = useState(null);
   const [mode, setMode] = useThemeSwitch();
   const [scrolled, setScrolled] = useState(false);
 
@@ -224,22 +225,35 @@ export default function MegaHeader() {
         <div className="mx-auto flex max-w-7xl items-center gap-3 px-6 lg:px-8 py-2.5">
           {/* Mobile hamburger */}
           <button
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-neutral-200 text-neutral-800 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-300 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800 md:hidden transition-colors"
-            aria-label="Open menu"
+            className="relative z-[70] inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-200 bg-white/50 text-neutral-800 backdrop-blur-sm hover:bg-neutral-100 focus:outline-none dark:border-neutral-700 dark:bg-neutral-800/50 dark:text-neutral-200 dark:hover:bg-neutral-800 md:hidden transition-all duration-300"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileOpen((s) => !s)}
           >
-            <span className="sr-only">Menu</span>
-            <div className={cx("space-y-1.5 transition-transform", mobileOpen ? "scale-95" : "scale-100")}>
-              <span className="block h-0.5 w-5 bg-current"></span>
-              <span className="block h-0.5 w-5 bg-current"></span>
-              <span className="block h-0.5 w-5 bg-current"></span>
+            <div className="relative flex h-5 w-5 flex-col items-center justify-center">
+              <span
+                className={cx(
+                  "block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out",
+                  mobileOpen ? "translate-y-0.5 rotate-45" : "-translate-y-1"
+                )}
+              />
+              <span
+                className={cx(
+                  "block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out",
+                  mobileOpen ? "opacity-0" : "opacity-100"
+                )}
+              />
+              <span
+                className={cx(
+                  "block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out",
+                  mobileOpen ? "-translate-y-0.5 -rotate-45" : "translate-y-1"
+                )}
+              />
             </div>
           </button>
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <Image src={profileImg} alt="CodeBucks logo" className="w-36 h-auto rounded-full" sizes="20vw" priority />
-
+            <Image src={profileImg} alt="Jadoon Technologies logo" className="w-32 md:w-36 h-auto transition-transform duration-300 group-hover:scale-105" sizes="20vw" priority />
           </Link>
 
           {/* Desktop nav */}
@@ -299,7 +313,7 @@ export default function MegaHeader() {
           {/* CTA before Regions */}
           <Link
             href="/contact"
-            className="hidden md:inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold bg-blue-600 text-white shadow-sm hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
+            className="hidden md:inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold bg-blue-600 text-white shadow-lg shadow-blue-500/25 hover:bg-blue-700 hover:shadow-blue-500/40 transition-all duration-300 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
           >
             Contact us
           </Link>
@@ -361,81 +375,208 @@ export default function MegaHeader() {
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
             className={cx(
-              "w-8 h-8 ml-1 flex items-center justify-center rounded-full p-1 border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/40",
+              "w-10 h-10 ml-1 flex items-center justify-center rounded-full p-2 border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/40",
               mode === "light"
-                ? "bg-neutral-900 text-white border-neutral-900 hover:scale-110"
-                : "bg-white text-neutral-900 border-neutral-300 dark:bg-neutral-800 dark:text-neutral-100 dark:border-neutral-700 hover:scale-110"
+                ? "bg-neutral-900 text-white border-neutral-900 hover:scale-110 shadow-md"
+                : "bg-white text-neutral-900 border-neutral-300 dark:bg-neutral-800 dark:text-neutral-100 dark:border-neutral-700 hover:scale-110 shadow-md"
             )}
             aria-label="theme-switcher"
           >
-            {mode === "light" ? <MoonIcon className="fill-current" /> : <SunIcon className="fill-current" />}
+            {mode === "light" ? <MoonIcon className="fill-current w-5 h-5" /> : <SunIcon className="fill-current w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile sheet */}
+        {/* Mobile Menu Overlay */}
         <div
           className={cx(
-            "fixed inset-0 z-50 transform bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md p-4 transition-transform duration-300 ease-out md:hidden",
-            mobileOpen ? "translate-x-0" : "-translate-x-full"
+            "fixed inset-0 z-[100] flex flex-col bg-white dark:bg-neutral-950 transition-all duration-300 ease-out md:hidden",
+            mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
           aria-hidden={!mobileOpen}
           role="dialog"
           aria-modal="true"
         >
-          <div className="mx-auto flex max-w-7xl items-center justify-between">
-            <span className="text-xs font-semibold text-neutral-900 dark:text-white">Jadoon Technologies</span>
-            <div className="flex items-center gap-2">
-              <details className="[&_summary::-webkit-details-marker]:hidden">
-                <summary className="cursor-pointer rounded-full px-3 py-1 text-sm font-medium text-neutral-800 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800 transition-colors">
-                  Regions
-                </summary>
-                <ul className="mt-2 rounded-xl border border-neutral-200 bg-white p-2 shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
-                  {REGIONS.map((r) => (
-                    <li key={r.title}>
-                      <Link
-                        href={r.href}
-                        className="block rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800 transition-colors"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {r.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-              <button
-                onClick={() => setMobileOpen(false)}
-                className="inline-flex h-9 items-center justify-center rounded-lg border border-neutral-200 px-3 text-sm text-neutral-700 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-300 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800 transition-colors"
-              >
-                Close
-              </button>
-            </div>
+          {/* Modern Mobile Menu Header */}
+          <div className="flex items-center justify-between px-6 py-5 border-b border-neutral-200/50 dark:border-neutral-800/50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-xl">
+            <Link
+              href="/"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2"
+            >
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-blue-500/30 shadow-lg shadow-blue-500/25 p-1.5">
+                <Image
+                  src="/favicon-32x32.png"
+                  alt="Jadoon Technologies"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="text-base font-bold text-neutral-900 dark:text-white">
+                Jadoon Technologies
+              </span>
+            </Link>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 text-neutral-600 transition-colors hover:bg-neutral-200 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800"
+              aria-label="Close menu"
+            >
+              <X className="h-5 w-5" />
+            </button>
           </div>
 
-          <div className="mx-auto mt-4 max-w-7xl divide-y divide-neutral-200 bg-white p-4 dark:bg-black ">
-            {Object.entries(NAV).map(([group, items]) => (
-              <details key={group} className="py-2 open:py-3 transition-all">
-                <summary className="flex cursor-pointer items-center justify-between py-2 text-base font-semibold text-neutral-900 dark:text-neutral-100">
-                  {group}
-                  <span className="text-neutral-500 dark:text-neutral-400">▾</span>
-                </summary>
-                <ul className="grid gap-1 pl-2">
-                  {items.map((item) => (
-                    <li key={item.title}>
-                      <Link
-                        href={item.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="block rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-neutral-800 transition-colors"
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            ))}
+          {/* Mobile Menu Content */}
+          <div className="flex-1 overflow-y-auto overscroll-contain absolute top-20 bg-white dark:bg-neutral-950 z-50">
+            <nav className="px-6 py-6 space-y-2">
+              {Object.entries(NAV).map(([group, items], groupIndex) => (
+                <div
+                  key={group}
+                  className="rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 bg-gradient-to-br from-white to-neutral-50/50 dark:from-neutral-900/50 dark:to-neutral-900/30 overflow-hidden shadow-sm"
+                  style={{
+                    animation: mobileOpen ? `slideInStagger 0.4s ease-out ${groupIndex * 0.05}s both` : 'none'
+                  }}
+                >
+                  <button
+                    onClick={() => setMobileOpenGroup(mobileOpenGroup === group ? null : group)}
+                    className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-neutral-50/50 dark:hover:bg-neutral-800/30"
+                  >
+                    <h3 className={cx(
+                      "text-sm font-bold uppercase tracking-wide transition-colors",
+                      mobileOpenGroup === group
+                        ? "text-blue-600 dark:text-blue-400"
+                        : "text-neutral-700 dark:text-neutral-300"
+                    )}>
+                      {group}
+                    </h3>
+                    <div className={cx(
+                      "flex h-7 w-7 items-center justify-center rounded-lg transition-all duration-300",
+                      mobileOpenGroup === group
+                        ? "bg-blue-600 dark:bg-blue-500 rotate-90"
+                        : "bg-neutral-200 dark:bg-neutral-800"
+                    )}>
+                      <ChevronRight className={cx(
+                        "h-4 w-4 transition-colors",
+                        mobileOpenGroup === group
+                          ? "text-white"
+                          : "text-neutral-600 dark:text-neutral-400"
+                      )} />
+                    </div>
+                  </button>
+
+                  <div className={cx(
+                    "grid transition-all duration-300 ease-in-out",
+                    mobileOpenGroup === group
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  )}>
+                    <div className="min-h-0 overflow-hidden">
+                      <ul className="px-3 pb-3 space-y-2">
+                        {items.map((item, itemIndex) => {
+                          const Icon = item.icon;
+                          return (
+                            <li
+                              key={item.title}
+                              style={{
+                                animation: mobileOpenGroup === group
+                                  ? `fadeInUp 0.3s ease-out ${itemIndex * 0.03}s both`
+                                  : 'none'
+                              }}
+                            >
+                              <Link
+                                href={item.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="group flex items-start gap-3 rounded-xl bg-white p-3.5 transition-all hover:bg-blue-50 hover:shadow-md dark:bg-neutral-900/50 dark:hover:bg-neutral-800/80 border border-transparent hover:border-blue-100 dark:hover:border-blue-900/30"
+                              >
+                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-neutral-100 to-neutral-200 text-blue-600 transition-all group-hover:from-blue-600 group-hover:to-blue-700 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/25 dark:from-neutral-800 dark:to-neutral-900 dark:text-blue-400">
+                                  {Icon && <Icon className="h-5 w-5" />}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 mb-0.5">
+                                    {item.title}
+                                  </div>
+                                  {item.desc && (
+                                    <div className="text-xs text-neutral-500 dark:text-neutral-400 line-clamp-2 leading-relaxed">
+                                      {item.desc}
+                                    </div>
+                                  )}
+                                </div>
+                                <ChevronRight className="h-4 w-4 text-neutral-400 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 dark:text-neutral-500" />
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              {/* Regions Section */}
+              <div
+                className="rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 bg-gradient-to-br from-white to-neutral-50/50 dark:from-neutral-900/50 dark:to-neutral-900/30 overflow-hidden shadow-sm"
+                style={{
+                  animation: mobileOpen ? `slideInStagger 0.4s ease-out ${Object.keys(NAV).length * 0.05}s both` : 'none'
+                }}
+              >
+                <button
+                  onClick={() => setMobileOpenGroup(mobileOpenGroup === "Regions" ? null : "Regions")}
+                  className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-neutral-50/50 dark:hover:bg-neutral-800/30"
+                >
+                  <h3 className={cx(
+                    "text-sm font-bold uppercase tracking-wide transition-colors",
+                    mobileOpenGroup === "Regions"
+                      ? "text-blue-600 dark:text-blue-400"
+                      : "text-neutral-700 dark:text-neutral-300"
+                  )}>
+                    Regions
+                  </h3>
+                  <div className={cx(
+                    "flex h-7 w-7 items-center justify-center rounded-lg transition-all duration-300",
+                    mobileOpenGroup === "Regions"
+                      ? "bg-blue-600 dark:bg-blue-500 rotate-90"
+                      : "bg-neutral-200 dark:bg-neutral-800"
+                  )}>
+                    <ChevronRight className={cx(
+                      "h-4 w-4 transition-colors",
+                      mobileOpenGroup === "Regions"
+                        ? "text-white"
+                        : "text-neutral-600 dark:text-neutral-400"
+                    )} />
+                  </div>
+                </button>
+
+                <div className={cx(
+                  "grid transition-all duration-300 ease-in-out",
+                  mobileOpenGroup === "Regions"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                )}>
+                  <div className="min-h-0 overflow-hidden">
+                    <div className="px-3 pb-3 space-y-2">
+                      {REGIONS.map((r, idx) => (
+                        <Link
+                          key={r.title}
+                          href={r.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="group flex items-center justify-between rounded-xl bg-white px-4 py-3.5 text-sm font-medium text-neutral-800 transition-all hover:bg-blue-50 hover:shadow-md dark:bg-neutral-900/50 dark:text-neutral-200 dark:hover:bg-neutral-800/80 border border-transparent hover:border-blue-100 dark:hover:border-blue-900/30"
+                          style={{
+                            animation: mobileOpenGroup === "Regions"
+                              ? `fadeInUp 0.3s ease-out ${idx * 0.05}s both`
+                              : 'none'
+                          }}
+                        >
+                          <span>{r.title}</span>
+                          <ChevronRight className="h-4 w-4 text-neutral-400 transition-transform group-hover:translate-x-1 dark:text-neutral-500" />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
           </div>
         </div>
+
       </header>
     </>
   );
