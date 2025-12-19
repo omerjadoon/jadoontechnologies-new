@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image"
+import DeferredImage from "@/src/components/Elements/DeferredImage";
 import profileImg from "@/public/jadoon technologies logo.png"
 import {
   Rocket, Globe, Smartphone, Code2, Palette, Cpu, Brain, Sparkles, Blocks, Cloud,
@@ -645,9 +646,10 @@ function MenuGrid({ title, items }) {
       {isServices && (
         <article className="col-span-1 hidden overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700 md:block group hover:border-neutral-300 dark:hover:border-neutral-600 transition-colors">
           <div className="h-40 w-full relative">
-            <img
+            <DeferredImage
               src="/data-standard.jpg"
               alt="Data Standards"
+              fill
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>

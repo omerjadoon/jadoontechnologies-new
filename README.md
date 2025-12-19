@@ -5,7 +5,7 @@
 ![Github Followers](https://img.shields.io/github/followers/codebucks27.svg?style=social&label=Follow)&nbsp;&nbsp;<br />
 
 For Demo checkout following links👇: <br />
-[Nextjs Personal Blog Website](https://create-blog-with-nextjs.vercel.app/) <br />
+[Jadoon Technologies](https://jadoontechnologies.com/) <br />
 
 Starter Code Files👇: <br />
 [Nextjs Personal Blog Website Starter Code](https://github.com/codebucks27/Nextjs-contentlayer-blog) <br />

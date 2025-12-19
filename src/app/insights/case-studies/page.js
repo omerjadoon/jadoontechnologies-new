@@ -1,11 +1,8 @@
+"use client";
+
 import { caseStudies } from "@/.velite/generated";
 import Link from "next/link";
-import Image from "next/image";
-
-export const metadata = {
-    title: "Case Studies | Jadoon Technologies",
-    description: "Explore our success stories and how we help clients achieve their goals.",
-};
+import DeferredImage from "@/src/components/Elements/DeferredImage";
 
 export default function CaseStudiesPage() {
     // Fallback if caseStudies is undefined (e.g. during initial build before generation)
@@ -26,10 +23,11 @@ export default function CaseStudiesPage() {
                         <Link key={study.slug} href={`/case-studies/${study.slug}`} className="group block rounded-2xl border border-neutral-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 overflow-hidden hover:border-[#2563eb]/50 transition-colors">
                             <div className="aspect-video relative bg-neutral-200 dark:bg-slate-800">
                                 {study.image && (
-                                    <Image
+                                    <DeferredImage
                                         src={study.image}
                                         alt={study.title}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
                                 )}

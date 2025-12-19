@@ -1,7 +1,7 @@
 import { format } from "date-fns";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import DeferredImage from "../Elements/DeferredImage";
 
 const BlogLayoutTwo = ({ blog }) => {
   return (
@@ -10,7 +10,7 @@ const BlogLayoutTwo = ({ blog }) => {
         href={blog.url}
         className=" col-span-12  lg:col-span-4 h-full rounded-xl overflow-hidden"
       >
-        <Image
+        <DeferredImage
           src={blog.image.src}
           placeholder="blur"
           blurDataURL={blog.image.blurDataURL}

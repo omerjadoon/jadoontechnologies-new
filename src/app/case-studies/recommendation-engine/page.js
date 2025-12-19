@@ -13,11 +13,11 @@ export default function RecommendationEngineCaseStudy() {
             <section className="relative bg-gradient-to-br from-purple-600 to-indigo-800 dark:from-purple-900 dark:to-neutral-950 py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <Link
-                        href="/"
+                        href="/insights/case-studies"
                         className="inline-flex items-center gap-2 text-white/90 hover:text-white mb-8 transition-colors"
                     >
                         <ArrowLeft className="h-4 w-4" />
-                        Back to Home
+                        Back to Case Studies
                     </Link>
 
                     <div className="max-w-4xl">

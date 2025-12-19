@@ -3,12 +3,12 @@ const siteMetadata = {
   title: 'Jadoon Technologies - Leading AI and Software Development Agency',
   author: 'Jadoon Technologies LLC',
   headerTitle: 'Jadoon Technologies',
-  description: 'Jadoon Technologies is a leading Artificial Intelligence and Web Development Company with offices in US, Pakistan and Germany. Our moto is Your vision, Our Code. Jadoon Technologies is transforming businesses by providing state of the art AI and Software Solutions.',
+  description: 'Jadoon Technologies is a premier Artificial Intelligence and Web Development Agency. We specialize in custom AI solutions, generative AI, mobile app development, and digital transformation for startups and enterprises worldwide. Your vision, Our Code.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://create-blog-with-nextjs.vercel.app', // your website URL
+  siteUrl: 'https://jadoontechnologies.com', // updated to the likely production URL
   siteLogo: '/logo.png',
-  socialBanner: '/social-banner.png', // add social banner in the public folder
+  socialBanner: '/social-banner.png',
   email: 'info@jadoontechnologies.com',
   facebook: 'https://www.facebook.com/jadoontechnologies',
   youtube: 'https://www.youtube.com/channel/UCLcMcmIjz8finJhenX7mIzQ',

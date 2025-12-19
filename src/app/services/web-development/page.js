@@ -1,11 +1,47 @@
 import ServicePage from "@/src/components/Services/ServicePage";
 
+import siteMetadata from "@/src/utils/siteMetaData";
+
 export const metadata = {
     title: "Web Development Services | Jadoon Technologies",
-    description: "Custom web development services to build scalable, secure, and high-performance websites and web applications.",
+    description: "Custom web development services to build scalable, secure, and high-performance websites and web applications using Next.js, React, and Node.js.",
+    keywords: ["Web Development", "Custom Web Apps", "SaaS Development", "Next.js Agency", "React Development", "Full Stack Development", "E-commerce Solutions"],
 };
 
 export default function WebDevelopmentPage() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Web Development Services",
+        "provider": {
+            "@type": "Organization",
+            "name": "Jadoon Technologies",
+            "url": siteMetadata.siteUrl
+        },
+        "description": "Custom web development services to build scalable, secure, and high-performance websites and web applications.",
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Development",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Web Applications"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "E-commerce Solutions"
+                    }
+                }
+            ]
+        }
+    };
+
     const features = [
         {
             title: "Custom Web Applications",
@@ -43,12 +79,18 @@ export default function WebDevelopmentPage() {
     ];
 
     return (
-        <ServicePage
-            title="Web Development"
-            subtitle="Building the web of tomorrow, today."
-            description="We craft high-performance, visually stunning, and user-centric web applications that drive engagement and business growth. Whether you need a simple corporate website or a complex SaaS platform, our expert team delivers solutions that stand out."
-            features={features}
-            benefits={benefits}
-        />
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <ServicePage
+                title="Web Development"
+                subtitle="Building the web of tomorrow, today."
+                description="We craft high-performance, visually stunning, and user-centric web applications that drive engagement and business growth. Whether you need a simple corporate website or a complex SaaS platform, our expert team delivers solutions that stand out."
+                features={features}
+                benefits={benefits}
+            />
+        </>
     );
 }

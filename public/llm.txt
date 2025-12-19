@@ -1,0 +1,30 @@
+# Jadoon Technologies
+
+Jadoon Technologies is a premier Artificial Intelligence and Web Development Agency. We specialize in custom AI solutions, generative AI, mobile app development, and digital transformation for startups and enterprises worldwide.
+
+## Core Services
+
+- **Generative AI & Automations**: Custom LLM solutions, AI-powered content generation, intelligent chatbots, and workflow automation.
+- **Web Development**: High-performance web products, custom SaaS, dashboards, and SEO-optimized web applications using Next.js, Node.js, and Python.
+- **Mobile App Development**: Native and cross-platform apps for iOS and Android using Flutter and React Native.
+- **Digital Transformation**: Strategic consulting and engineering to modernize business processes.
+- **UI/UX Design**: User-centric design for digital products.
+- **Emerging Tech**: Expertise in Blockchain, Web3, and Data/Cloud solutions.
+
+## Industries Served
+
+- E-commerce & Retail
+- Travel & Hospitality
+- Technology, Media & Telecommunications (TMT)
+- Banking & Financial Services (BFS)
+- Healthcare & Life Sciences
+
+## Contact Information
+
+- Website: https://jadoontechnologies.com
+- Email: info@jadoontechnologies.com
+- Locations: US, Pakistan, Germany
+
+## Case Studies
+
+Explore our successful projects at https://jadoontechnologies.com/insights/case-studies

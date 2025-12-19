@@ -44,7 +44,26 @@
       }
     ],
     "slug": "ecotrack",
-    "url": "/insights/blog/ecotrack",
+    "category": "Sustainability • Data Analytics",
+    "color": "emerald",
+    "stats": [
+      {
+        "label": "Carbon Reduction",
+        "value": "15%",
+        "icon": "TrendingDown"
+      },
+      {
+        "label": "Reporting Time",
+        "value": "50%",
+        "icon": "Clock"
+      },
+      {
+        "label": "Innovation",
+        "value": "Awarded",
+        "icon": "Award"
+      }
+    ],
+    "url": "/case-studies/ecotrack",
     "readingTime": {
       "text": "1 min read",
       "minutes": 0.375,
@@ -97,7 +116,26 @@
       }
     ],
     "slug": "fintech-revolution",
-    "url": "/insights/blog/fintech-revolution",
+    "category": "Fintech • Mobile App",
+    "color": "blue",
+    "stats": [
+      {
+        "label": "App Store Rating",
+        "value": "4.8/5",
+        "icon": "Award"
+      },
+      {
+        "label": "Daily Active Users",
+        "value": "200%",
+        "icon": "Users"
+      },
+      {
+        "label": "Support Tickets",
+        "value": "30%",
+        "icon": "TrendingDown"
+      }
+    ],
+    "url": "/case-studies/fintech-revolution",
     "readingTime": {
       "text": "1 min read",
       "minutes": 0.485,
@@ -156,7 +194,26 @@
       }
     ],
     "slug": "fitness-app-gym",
-    "url": "/insights/blog/fitness-app-gym",
+    "category": "Health • Mobile App",
+    "color": "rose",
+    "stats": [
+      {
+        "label": "Member Retention",
+        "value": "30%",
+        "icon": "TrendingUp"
+      },
+      {
+        "label": "User Engagement",
+        "value": "High",
+        "icon": "Users"
+      },
+      {
+        "label": "Operations",
+        "value": "Streamlined",
+        "icon": "Zap"
+      }
+    ],
+    "url": "/case-studies/fitness-app-gym",
     "readingTime": {
       "text": "1 min read",
       "minutes": 0.75,
@@ -209,7 +266,26 @@
       }
     ],
     "slug": "health-connect",
-    "url": "/insights/blog/health-connect",
+    "category": "Healthcare • Telemedicine",
+    "color": "indigo",
+    "stats": [
+      {
+        "label": "Consultations",
+        "value": "10,000+",
+        "icon": "Users"
+      },
+      {
+        "label": "Satisfaction",
+        "value": "98%",
+        "icon": "CheckCircle2"
+      },
+      {
+        "label": "Communities",
+        "value": "50+",
+        "icon": "Globe"
+      }
+    ],
+    "url": "/case-studies/health-connect",
     "readingTime": {
       "text": "1 min read",
       "minutes": 0.335,
@@ -268,7 +344,26 @@
       }
     ],
     "slug": "hoopstreet",
-    "url": "/insights/blog/hoopstreet",
+    "category": "Fintech • Investment",
+    "color": "amber",
+    "stats": [
+      {
+        "label": "Market Launch",
+        "value": "USA",
+        "icon": "Globe"
+      },
+      {
+        "label": "Scalability",
+        "value": "High",
+        "icon": "TrendingUp"
+      },
+      {
+        "label": "Feedback",
+        "value": "Positive",
+        "icon": "CheckCircle2"
+      }
+    ],
+    "url": "/case-studies/hoopstreet",
     "readingTime": {
       "text": "1 min read",
       "minutes": 0.75,
@@ -327,7 +422,26 @@
       }
     ],
     "slug": "multi-agentic-system",
-    "url": "/insights/blog/multi-agentic-system",
+    "category": "AI • Automation",
+    "color": "purple",
+    "stats": [
+      {
+        "label": "Response Time",
+        "value": "60%",
+        "icon": "Clock"
+      },
+      {
+        "label": "Automation Rate",
+        "value": "45%",
+        "icon": "Brain"
+      },
+      {
+        "label": "Satisfaction",
+        "value": "Improved",
+        "icon": "Sparkles"
+      }
+    ],
+    "url": "/case-studies/multi-agentic-system",
     "readingTime": {
       "text": "1 min read",
       "minutes": 0.855,
@@ -386,7 +500,26 @@
       }
     ],
     "slug": "u-bid-i-buy-cars",
-    "url": "/insights/blog/u-bid-i-buy-cars",
+    "category": "Automotive • E-commerce",
+    "color": "blue",
+    "stats": [
+      {
+        "label": "Participation",
+        "value": "Increased",
+        "icon": "Users"
+      },
+      {
+        "label": "Process",
+        "value": "Streamlined",
+        "icon": "Zap"
+      },
+      {
+        "label": "Performance",
+        "value": "Robust",
+        "icon": "BarChart3"
+      }
+    ],
+    "url": "/case-studies/u-bid-i-buy-cars",
     "readingTime": {
       "text": "1 min read",
       "minutes": 0.67,

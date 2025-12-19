@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import DeferredImage from "@/src/components/Elements/DeferredImage";
 
 export default function CaseStudiesSection() {
   const cases = [
@@ -55,10 +56,11 @@ export default function CaseStudiesSection() {
               className="group flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/40 transition hover:shadow-xl hover:scale-[1.02] hover:border-blue-300 dark:hover:border-blue-700"
             >
               <div className="relative h-48 w-full overflow-hidden bg-gray-100 dark:bg-slate-800">
-                {/* Using standard img tag for external placeholder to avoid Next.js config requirement for now */}
-                <img
+                <DeferredImage
                   src={cs.image}
                   alt={cs.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                 />
               </div>

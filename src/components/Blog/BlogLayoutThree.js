@@ -1,13 +1,13 @@
 import { format } from "date-fns";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import DeferredImage from "../Elements/DeferredImage";
 
 const BlogLayoutThree = ({ blog }) => {
   return (
     <div className="group flex flex-col items-center text-dark dark:text-light">
       <Link href={blog.url} className="h-full rounded-xl overflow-hidden">
-        <Image
+        <DeferredImage
           src={blog.image.src}
           placeholder="blur"
           blurDataURL={blog.image.blurDataURL}

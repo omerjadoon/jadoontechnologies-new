@@ -15,11 +15,11 @@ export default function HeroHeader({
 }) {
   // Customize with your real logo paths
   const brandLogos = [
-    { src: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/04/attachment_52023985-e1492476881884.jpg", alt: "Company 1" },
-    { src: "https://static.wixstatic.com/media/72c0b2_0f9bc04e4f1c4a63bc59a9d29bcd298e~mv2.jpg", alt: "Company 2" },
-    { src: "https://d1yjjnpx0p53s8.cloudfront.net/g1.png", alt: "Company 3" },
-    { src: "https://static.wixstatic.com/media/72c0b2_50f4ae8cb3234425bf53d05a303da38f~mv2.jpg", alt: "Company 4" },
-    { src: "https://static.wixstatic.com/media/72c0b2_8c80bd13f06643388cec45d934c410cb~mv2.jpg", alt: "Company 5" },
+    { src: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/04/attachment_52023985-e1492476881884.jpg", alt: "Trusted Partner Logo 1" },
+    { src: "https://static.wixstatic.com/media/72c0b2_0f9bc04e4f1c4a63bc59a9d29bcd298e~mv2.jpg", alt: "Trusted Partner Logo 2" },
+    { src: "https://d1yjjnpx0p53s8.cloudfront.net/g1.png", alt: "Trusted Partner Logo 3" },
+    { src: "https://static.wixstatic.com/media/72c0b2_50f4ae8cb3234425bf53d05a303da38f~mv2.jpg", alt: "Trusted Partner Logo 4" },
+    { src: "https://static.wixstatic.com/media/72c0b2_8c80bd13f06643388cec45d934c410cb~mv2.jpg", alt: "Trusted Partner Logo 5" },
   ];
 
   return (
