@@ -6,6 +6,9 @@ export const metadata = {
     title: "AI & Data Analytics Services | Jadoon Technologies",
     description: "Unlock the power of your data with advanced AI and analytics solutions. Predictive modeling, machine learning, and data visualization.",
     keywords: ["AI Analytics", "Machine Learning Services", "Data Science Agency", "Predictive Modeling", "Business Intelligence", "NLP Solutions", "Computer Vision"],
+    alternates: {
+        canonical: "/services/ai-data",
+    },
 };
 
 export default function AiDataPage() {

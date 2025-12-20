@@ -6,6 +6,9 @@ export const metadata = {
     title: "Web Development Services | Jadoon Technologies",
     description: "Custom web development services to build scalable, secure, and high-performance websites and web applications using Next.js, React, and Node.js.",
     keywords: ["Web Development", "Custom Web Apps", "SaaS Development", "Next.js Agency", "React Development", "Full Stack Development", "E-commerce Solutions"],
+    alternates: {
+        canonical: "/services/web-development",
+    },
 };
 
 export default function WebDevelopmentPage() {

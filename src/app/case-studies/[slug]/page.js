@@ -91,6 +91,9 @@ export async function generateMetadata({ params }) {
             locale: "en_US",
             type: "article",
         },
+        alternates: {
+            canonical: study.url,
+        },
     };
 }
 

@@ -18,6 +18,9 @@ export const metadata = {
   title: "Jadoon Technologies | AI & Software Development Agency",
   description: "Leading AI and Software Development Agency specializing in Generative AI, Custom Web Platforms, and Mobile Apps. We transform businesses with cutting-edge technology.",
   keywords: ["AI Development", "Generative AI", "Web Development", "Software Agency", "Digital Transformation", "Custom Software", "Next.js Development", "AI Solutions"],
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {

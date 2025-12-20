@@ -52,6 +52,9 @@ export const metadata = {
     title: siteMetadata.title,
     images: [siteMetadata.socialBanner],
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({ children }) {

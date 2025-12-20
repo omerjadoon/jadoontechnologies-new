@@ -55,6 +55,9 @@ export async function generateMetadata({ params }) {
       description: blog.description,
       images: ogImages,
     },
+    alternates: {
+      canonical: blog.url,
+    },
   };
 }
 

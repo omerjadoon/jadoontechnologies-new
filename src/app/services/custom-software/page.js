@@ -6,6 +6,9 @@ export const metadata = {
     title: "Custom Software Development Services | Jadoon Technologies",
     description: "Tailored software solutions to address your unique business challenges. Enterprise software, SaaS products, and legacy modernization.",
     keywords: ["Custom Software", "Enterprise Software", "SaaS Development", "Software Modernization", "Cloud Native Apps", "API Integration", "Software Engineering"],
+    alternates: {
+        canonical: "/services/custom-software",
+    },
 };
 
 export default function CustomSoftwarePage() {

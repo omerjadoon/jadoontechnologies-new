@@ -6,6 +6,9 @@ import { format } from "date-fns";
 export const metadata = {
     title: "Blog | Jadoon Technologies",
     description: "Latest trends, tech insights, and company updates from Jadoon Technologies.",
+    alternates: {
+        canonical: "/insights/blog",
+    },
 };
 
 export default function BlogListingPage() {

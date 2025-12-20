@@ -6,6 +6,9 @@ export const metadata = {
     title: "Generative AI & Automations | Jadoon Technologies",
     description: "Leverage the power of Generative AI to automate tasks, create content, and drive innovation. Custom LLM development, AI agents, and workflow automation.",
     keywords: ["Generative AI", "AI Automation", "LLM Development", "AI Agents", "Custom AI Solutions", "AI Consulting", "Machine Learning"],
+    alternates: {
+        canonical: "/services/generative-ai",
+    },
 };
 
 export default function GenerativeAiPage() {
