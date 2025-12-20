@@ -29,6 +29,7 @@ export default function sitemap() {
         "/industries/healthcare",
         "/insights/case-studies",
         "/insights/blog",
+        "/insights/faq",
         "/insights/videos",
         "/insights/workplace-culture",
         "/contact",

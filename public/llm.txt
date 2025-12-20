@@ -25,6 +25,10 @@ Jadoon Technologies is a premier Artificial Intelligence and Web Development Age
 - Email: info@jadoontechnologies.com
 - Locations: US, Pakistan, Germany
 
-## Case Studies
+## Resources
 
-Explore our successful projects at https://jadoontechnologies.com/insights/case-studies
+- **Official Website**: https://jadoontechnologies.com
+- **Case Studies**: https://jadoontechnologies.com/insights/case-studies
+- **Blog**: https://jadoontechnologies.com/insights/blog
+- **FAQ**: https://jadoontechnologies.com/insights/faq
+- **Contact**: https://jadoontechnologies.com/contact

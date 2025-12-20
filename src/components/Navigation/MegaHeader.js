@@ -7,7 +7,7 @@ import profileImg from "@/public/jadoon technologies logo.png"
 import {
   Rocket, Globe, Smartphone, Code2, Palette, Cpu, Brain, Sparkles, Blocks, Cloud,
   ShoppingBag, Plane, Radio, Landmark, Heart,
-  FileText, BookOpen, Video, Users,
+  FileText, BookOpen, Video, Users, HelpCircle,
   Info, Star, UserCheck, Leaf, HeartHandshake, Briefcase, Mail, Phone, MapPin,
   ChevronRight, X, Sun, Moon
 } from "lucide-react";
@@ -75,6 +75,7 @@ const NAV = {
   Insights: [
     { title: "Case Studies", href: "/insights/case-studies", icon: FileText, desc: "Real-world success stories" },
     { title: "Blog", href: "/insights/blog", icon: BookOpen, desc: "Latest trends and tech insights" },
+    { title: "FAQ", href: "/insights/faq", icon: HelpCircle, desc: "Frequently asked questions" },
     { title: "Videos", href: "/insights/videos", icon: Video, desc: "Tech talks and demos" },
     { title: "Workplace Culture", href: "/insights/workplace-culture", icon: Users, desc: "Life at Jadoon Technologies" },
   ],
