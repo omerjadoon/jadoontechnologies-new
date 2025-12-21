@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import siteMetadata from "../utils/siteMetaData";
 import Script from "next/script";
 import MegaHeader from "../components/Navigation/MegaHeader";
+import PWARegistration from "../components/PWARegistration";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -55,6 +56,18 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Jadoon Tech",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+};
+
+export const viewport = {
+  themeColor: "#2563eb",
 };
 
 export default function RootLayout({ children }) {
@@ -74,6 +87,7 @@ export default function RootLayout({ children }) {
     document.documentElement.classList.remove('dark')
   }`}
         </Script>
+        <PWARegistration />
         <MegaHeader />
         {children}
         <Footer />

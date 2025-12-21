@@ -5,8 +5,9 @@ export default function manifest() {
     description: 'Leading AI and Software Development Agency',
     start_url: '/',
     display: 'standalone',
-    //   background_color: '#fff',
-    //   theme_color: '#fff',
+    background_color: '#020617',
+    theme_color: '#2563eb',
+    orientation: 'portrait',
     icons: [
       {
         src: '/favicon-32x32.png',
@@ -22,11 +23,13 @@ export default function manifest() {
         src: '/android-chrome-192x192.png',
         sizes: '192x192',
         type: 'image/png',
+        purpose: 'any maskable',
       },
       {
-        src: '/android-chrome-512x512',
+        src: '/android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png',
+        purpose: 'any maskable',
       },
     ],
   }
