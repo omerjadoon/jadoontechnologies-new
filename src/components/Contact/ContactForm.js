@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Send, Loader2 } from "lucide-react";
+import mixpanel from "mixpanel-browser";
 
 export default function ContactForm() {
   const {
@@ -34,13 +35,42 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (result.success) {
+        mixpanel.identify(data.email);
+        mixpanel.people.set({
+          "$name": data.name,
+          "$email": data.email,
+          "phone": data.phone,
+          "company": data.company,
+          "project_type": data.projectType,
+          "budget": data.budget,
+        });
+        mixpanel.track("Conversion", {
+          "Conversion Type": "Contact Form Submission",
+          "Project Type": data.projectType,
+          "Budget": data.budget,
+        });
+        mixpanel.track("Sign Up", {
+          "user_id": data.email,
+          "email": data.email,
+          "signup_method": "Contact Form",
+        });
         setSubmitStatus("success");
         reset();
       } else {
+        mixpanel.track("Error", {
+          "error_type": "Form Submission Error",
+          "error_message": result.message || "Web3Forms submission failed",
+          "page_url": typeof window !== "undefined" ? window.location.href : "",
+        });
         setSubmitStatus("error");
         console.error("Web3Forms Error:", result);
       }
     } catch (error) {
+      mixpanel.track("Error", {
+        "error_type": "Form Execution Error",
+        "error_message": error.message || "Submission logic failed",
+        "page_url": typeof window !== "undefined" ? window.location.href : "",
+      });
       setSubmitStatus("error");
       console.error("Submission Error:", error);
     }

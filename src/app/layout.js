@@ -7,6 +7,7 @@ import siteMetadata from "../utils/siteMetaData";
 import Script from "next/script";
 import MegaHeader from "../components/Navigation/MegaHeader";
 import PWARegistration from "../components/PWARegistration";
+import MixpanelInitializer from "../components/MixpanelInitializer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -88,6 +89,7 @@ export default function RootLayout({ children }) {
   }`}
         </Script>
         <PWARegistration />
+        <MixpanelInitializer />
         <MegaHeader />
         {children}
         <Footer />

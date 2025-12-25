@@ -1,6 +1,17 @@
+"use client";
+import { useEffect } from "react";
+import mixpanel from "mixpanel-browser";
 import Link from "next/link";
 
 export default function NotFound() {
+  useEffect(() => {
+    mixpanel.track("Error", {
+      "error_type": "404 Not Found",
+      "error_message": "Page not found",
+      "page_url": typeof window !== "undefined" ? window.location.href : "",
+    });
+  }, []);
+
   return (
     <main className="my-32 w-full dark:bg-dark flex justify-center font-mr">
       <div className="relative flex flex-col items-center justify-center">
